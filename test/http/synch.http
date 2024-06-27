@@ -1,0 +1,6 @@
+@server=http://localhost:4004
+@service=/odata/v4/synch
+
+
+####
+GET {{server}}{{service}}/Definitions?$expand=runs

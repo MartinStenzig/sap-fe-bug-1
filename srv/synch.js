@@ -23,9 +23,11 @@ export default class SynchService extends cds.ApplicationService {
         // Create a new run instance
         const run = await this.run(insQuery)
 
-        console.log('kickOffRun', def, run)
-        // Create a new run instance
+        // To test the error path, uncomment the following line
+        //this.reject(501,'Not yet implemented')
 
+        return run.ID
+        
     })
 
     super.init()

@@ -4,3 +4,11 @@
 
 ####
 GET {{server}}{{service}}/Definitions?$expand=runs
+
+
+### Sample kickoff of action
+POST {{server}}{{service}}/Definitions(6a7829a0-d4be-4414-a0cd-837d2be15635)/SynchService.kickOffRun
+Content-Type: application/json
+
+{
+}

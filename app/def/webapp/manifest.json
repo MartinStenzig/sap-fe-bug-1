@@ -102,11 +102,6 @@
           "pattern": ":?query:",
           "name": "DefinitionsList",
           "target": "DefinitionsList"
-        },
-        {
-          "pattern": "Definitions({key}):?query:",
-          "name": "DefinitionsObjectPage",
-          "target": "DefinitionsObjectPage"
         }
       ],
       "targets": {
@@ -118,31 +113,20 @@
             "settings": {
               "contextPath": "/Definitions",
               "variantManagement": "Page",
-              "navigation": {
-                "Definitions": {
-                  "detail": {
-                    "route": "DefinitionsObjectPage"
-                  }
-                }
-              },
+              "navigation": {},
               "controlConfiguration": {
                 "@com.sap.vocabularies.UI.v1.LineItem": {
                   "tableSettings": {
                     "type": "ResponsiveTable"
+                  },
+                  "actions": {
+                    "DataFieldForAction::SynchService.kickOffRun": {
+                      "enableOnSelect": "single"
+                    }
                   }
                 }
-              }
-            }
-          }
-        },
-        "DefinitionsObjectPage": {
-          "type": "Component",
-          "id": "DefinitionsObjectPage",
-          "name": "sap.fe.templates.ObjectPage",
-          "options": {
-            "settings": {
-              "editableHeaderContent": false,
-              "contextPath": "/Definitions"
+              },
+              "initialLoad": "Enabled"
             }
           }
         }

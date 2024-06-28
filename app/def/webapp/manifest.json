@@ -131,6 +131,15 @@
           }
         }
       }
+    },
+    "extends": {
+      "extensions": {
+        "sap.ui.controllerExtensions": {
+          "sap.fe.templates.ListReport.ListReportController#riz.synch.def::DefinitionsList": {
+            "controllerName": "riz.synch.def.ext.controller.Appr1"
+          }
+        }
+      }
     }
   },
   "sap.fiori": {

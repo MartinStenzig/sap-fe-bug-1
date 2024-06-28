@@ -54,5 +54,27 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension'], function (ControllerExten
 To reproduce the first issue, you can open up the application url [http://localhost:4004/def/webapp/index.html](http://localhost:4004/def/webapp/index.html) and receive the error message that the Model was not found. 
 
 
+## Approach 2
+The second idea is similar to the first one:
+1. An annotation (and manifest.json) based approach to trigger the server side, bound action. This works well. 
+2. Some sort of handler that
+    1. receives the UUID for from the successful action and uses it to 
+    2. trigger the external navigation with the received UUID as parameter
+
+
+To that end I tried to create a Controller extensions for **all ListReport Pages**. 
+
+The implementation of the code is as before (only show the added lines in this example):
+
+```javascript
+	// !!! ONLY ADDED this line to the original code !!!
+				if (!oModel) {
+					alert('Model not found')
+				}
+```
+
+To reproduce the first issue, you can open up the application url [http://localhost:4004/def/webapp/index.html](http://localhost:4004/def/webapp/index.html) and receive the error message that the Model was not found. 
+
+The problem seems to be the same. `oModel` is undefined
 
 

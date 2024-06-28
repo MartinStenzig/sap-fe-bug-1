@@ -77,4 +77,33 @@ To reproduce the first issue, you can open up the application url [http://localh
 
 The problem seems to be the same. `oModel` is undefined
 
+## Approach 3
+The third idea is to replace the whole thing with a custom action handler. 
+I used the following parameters: 
+
+<img src="./docs/screenshots/custom_action_parameters.png">
+
+The ActionHandlers.js file was defaulted with the starting point. All I did was add a console.log output. 
+```javascript
+sap.ui.define([
+    "sap/m/MessageToast"
+], function(MessageToast) {
+    'use strict';
+
+    return {
+        onTrigActionAndNav: function(oEvent) {
+            MessageToast.show("Custom handler invoked.");
+
+            // !!! ONLY ADDED THE FOLLOWING LINE !!!
+            console.log("Custom handler invoked.", oEvent);
+        }
+    };
+});
+```
+
+When I check the Google Chrome console I receive `Custom handler invoked. undefined`
+
+
+Without a proper bound event I don't seem to be able to use any of the examples I can find at present.
+
 

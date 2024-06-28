@@ -12,10 +12,5 @@ annotate service.Definitions with @(
             Value : shortDescription,
             Label : 'shortDescription',
         },
-        {
-            $Type : 'UI.DataFieldForAction',
-            Action : 'SynchService.kickOffRun',
-            Label : 'kickOffRun',
-        },
     ]
 );

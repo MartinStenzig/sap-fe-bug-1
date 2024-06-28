@@ -122,6 +122,13 @@
                   "actions": {
                     "DataFieldForAction::SynchService.kickOffRun": {
                       "enableOnSelect": "single"
+                    },
+                    "kickOffSynch": {
+                      "press": "riz.synch.def.ext.controller.ActionHandlers.onKickOffSynch",
+                      "visible": true,
+                      "enabled": true,
+                      "requiresSelection": true,
+                      "text": "kickOffSynch"
                     }
                   }
                 }

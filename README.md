@@ -78,3 +78,26 @@ To reproduce the first issue, you can open up the application url [http://localh
 The problem seems to be the same. `oModel` is undefined
 
 
+## Approach 4
+In this approach we are using a custom action button with a bound action in CAP. 
+
+1. Adding a 'custom action' rather than an 'action' prompts the following dialog
+<img src="./docs/screenshots/custom_action.png">
+
+2. The custom action automatically generates the following code:
+```javascript
+sap.ui.define([
+    "sap/m/MessageToast"
+], function(MessageToast) {
+    'use strict';
+
+    return {
+        onKickOffSynch: async function(oEvent) {
+            MessageToast.show("Custom handler invoked.");
+        }
+    };
+});
+```
+3. When i add a console log output to the function, I receive an 'undefined' oEvent
+
+
